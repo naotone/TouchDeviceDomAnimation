@@ -1,0 +1,3 @@
+Copyright (c) 2013 NAOTONE (Naoto Yoshimoto) Licensed under the MIT license. 
+iPhoneなどのタッチデバイスでスクロール中にjQueryなどのDOMを動かすハックです。
+詳しい使い方については後日記載します。
