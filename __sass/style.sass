@@ -3,26 +3,46 @@
 @import compass/reset
 @import compass 
 
-html
+html.on
   height: 100%
   overflow: hidden
   display: block
-body
-  width: 100%
-  height: 100%
-  display: block
-  background-color: #ddd
-  position: relative
-
-  #wrap
+  body
+    width: 100%
     height: 100%
-    overflow-y: scroll
     display: block
+    background-color: #ddd
     position: relative
-    -webkit-overflow-scrolling: touch
-    //-webkit-overflow-scrolling: touch can use inertia scrolling but animation stop from touch release to inertia scrolling end. 慣性スクロールが使えるが、指を離してから慣性スクロールが終了するまで、の間スクロールトリガーが動作しない。  
-    //-webkit-overflow-scrolling: auto can not use inertia scrolling but you can use scroll position trigger. 慣性スクロールはつかえませんが、スクロールポジションをトリガーとしたアニメーションも完全に動作。  
-    //I recommend use "touch" usually! 
+
+    #wrap
+      height: 100%
+      overflow-y: scroll
+      display: block
+      position: relative
+      -webkit-overflow-scrolling: touch
+      //-webkit-overflow-scrolling: touch can use inertia scrolling but animation stop from touch release to inertia scrolling end. 慣性スクロールが使えるが、指を離してから慣性スクロールが終了するまで、の間スクロールトリガーが動作しない。  
+      //-webkit-overflow-scrolling: auto can not use inertia scrolling but you can use scroll position trigger. 慣性スクロールはつかえませんが、スクロールポジションをトリガーとしたアニメーションも完全に動作。  
+      //I recommend use "touch" usually! 
+html.off
+  height: 100%
+  // overflow: hidden
+  display: block
+  body
+    // width: 100%
+    // height: 100%
+    display: block
+    background-color: #ddd
+    position: relative
+
+    #wrap
+      // height: 100%
+      // overflow-y: scroll
+      // display: block
+      // position: relative
+      // -webkit-overflow-scrolling: touch
+      //-webkit-overflow-scrolling: touch can use inertia scrolling but animation stop from touch release to inertia scrolling end. 慣性スクロールが使えるが、指を離してから慣性スクロールが終了するまで、の間スクロールトリガーが動作しない。  
+      //-webkit-overflow-scrolling: auto can not use inertia scrolling but you can use scroll position trigger. 慣性スクロールはつかえませんが、スクロールポジションをトリガーとしたアニメーションも完全に動作。  
+      //I recommend use "touch" usually! 
 
 // ---------------------------------------------------------------------------------------------------------
 
@@ -32,6 +52,7 @@ body
     border-bottom: 1px solid #333
     position: fixed
     width: 100%
+    z-index: 100
     h1
       font-size: 50px
       margin-top: 20px
@@ -73,6 +94,12 @@ body
 
 //normal
 body
+  .rect
+    width: 100px
+    height: 100px
+    background-color: black
+    margin-top: 100px
+
   header
     padding-left: 20px
     border-bottom: 1px solid #333
@@ -102,11 +129,6 @@ body
         font-size: 20px
         text-decoration: underline
         padding-top: 20px
-      .rect
-        width: 100px
-        height: 100px
-        background-color: black
-        margin-top: 100px
       .rect.toggle
         margin-top: 200px
 
