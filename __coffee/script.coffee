@@ -47,4 +47,14 @@ $ ->
     $(window).scroll ->
       y = $(window).scrollTop()
       $("#scrollPosition").text "SCROLL POSITION：" + y
-
+     
+      if y > 700 and y < 900
+        $(".rect.scroll").stop().animate
+          # marginLeft: 500
+          marginLeft: 500
+        ,1000,'linear'
+      else if y > 900 or y < 700
+        $(".rect.scroll").stop().animate
+          # marginLeft: 20
+          marginLeft: 0
+        ,1000,'linear'

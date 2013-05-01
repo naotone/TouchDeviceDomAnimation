@@ -43,7 +43,16 @@
     if ($('html').hasClass('off')) {
       return $(window).scroll(function() {
         y = $(window).scrollTop();
-        return $("#scrollPosition").text("SCROLL POSITION：" + y);
+        $("#scrollPosition").text("SCROLL POSITION：" + y);
+        if (y > 700 && y < 900) {
+          return $(".rect.scroll").stop().animate({
+            marginLeft: 500
+          }, 1000, 'linear');
+        } else if (y > 900 || y < 700) {
+          return $(".rect.scroll").stop().animate({
+            marginLeft: 0
+          }, 1000, 'linear');
+        }
       });
     }
   });
